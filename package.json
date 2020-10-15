@@ -2,25 +2,25 @@
 	"name": "vscode-gherkin-lint",
 	"displayName": "Gherkin lint",
 	"description": "gherkin-lint integration for vscode",
-  "publisher": "mad-booster",
-  "repository": "https://github.com/MadBooster/vscode-gherkin-lint",
-  "homepage": "https://github.com/MadBooster/vscode-gherkin-lint#readme",
-  "bugs": "https://github.com/MadBooster/vscode-gherkin-lint/issues",
-	"version": "0.0.1",
+	"publisher": "mad-booster",
+	"repository": "https://github.com/MadBooster/vscode-gherkin-lint",
+	"homepage": "https://github.com/MadBooster/vscode-gherkin-lint#readme",
+	"bugs": "https://github.com/MadBooster/vscode-gherkin-lint/issues",
+	"version": "0.0.2",
 	"engines": {
 		"vscode": "^1.48.0"
 	},
-  "categories": [
-    "Linters"
-  ],
-  "keywords": [
-    "feature",
-    "gherkin",
-    "lint",
-    "linter",
-    "validation",
-    "check"
-  ],
+	"categories": [
+		"Linters"
+	],
+	"keywords": [
+		"feature",
+		"gherkin",
+		"lint",
+		"linter",
+		"validation",
+		"check"
+	],
 	"activationEvents": [
 		"workspaceContains:**/.gherkin-lintrc"
 	],
