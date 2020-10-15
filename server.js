@@ -50,20 +50,6 @@ async function gherkinLint() {
   noDupe.clear()
   return linter.lint(featureFinder.getFeatureFiles(['features/']), config, [path.join(__dirname, 'rules')])
 }
-
-async function validate(document) {
-  if(!isDocumentValidatable(document)) {
-    return
-  }
-
-  try {
-    const results = await gherkinLint()
-    await handleValidationResults(document, results)
-  } catch(err) {
-    handleError(err)
-  }
-}
-
 async function handleValidationResults(document, results) {
   if(!isDocumentValidatable(document)) {
     return
@@ -124,13 +110,13 @@ connection.onInitialize(() => {
 
 connection.onDidChangeWatchedFiles(validateAll)
 
-documents.onDidChangeContent(({ document }) => validate(document))
+documents.onDidChangeContent(() => validateAll())
 
 documents.onDidClose(({ document }) => {
   clearDiagnostics(document)
 })
-documents.onDidSave(({ document }) => {
-  validate(document)
+documents.onDidSave(() => {
+  validateAll()
 })
 
 connection.onExecuteCommand(async(params) => {
